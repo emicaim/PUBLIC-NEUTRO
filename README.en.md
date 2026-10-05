@@ -9,6 +9,8 @@ can read what it is thinking at any moment, and why.
 It is inspired by the **concept cells** discovered by Rodrigo Quian Quiroga: neurons that store ideas («wolf nearby»,
 «hunger»), not details. Each concept learns what to do, and what one situation learns carries over to similar ones.
 
+**▶ Try it in your browser: [emicaim.github.io/PUBLIC-NEUTRO](https://emicaim.github.io/PUBLIC-NEUTRO/)** — Neutro Minds, a world of thousands of minds that learn on their own.
+
 > The code and the documentation are written in Spanish; the API is small and the examples are easy to follow.
 
 ## Why it is different

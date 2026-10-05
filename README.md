@@ -10,6 +10,8 @@ Está inspirado en las **neuronas de concepto** que descubrió Rodrigo Quian Qui
 sino ideas («lobo cerca», «hambre»). Cada concepto aprende qué hacer, y lo aprendido en una situación pasa a las
 parecidas.
 
+**▶ Pruébalo en el navegador: [emicaim.github.io/PUBLIC-NEUTRO](https://emicaim.github.io/PUBLIC-NEUTRO/)** — Neutro Minds, un mundo con miles de mentes que aprenden solas.
+
 [English version](README.en.md)
 
 ## Qué lo hace distinto
