@@ -1,0 +1,10 @@
+{
+  "name": "com.fokosoft.neutro",
+  "version": "0.1.0",
+  "displayName": "Neutro · cerebro de neuronas de concepto",
+  "description": "Un cerebro para agentes y NPC que aprenden solos de lo que sienten (hambre, dolor, miedo): neuronas de concepto inspiradas en Quian Quiroga, memoria de sucesos y un agente general que solo necesita su cuerpo, lo que ve y sus acciones. C# puro, sin dependencias, idéntico a las versiones de Python y JavaScript.",
+  "unity": "2021.3",
+  "license": "Apache-2.0",
+  "author": { "name": "FOKO SOFT (Emilio Martinez)", "url": "https://github.com/emicaim/PUBLIC-NEUTRO" },
+  "keywords": ["ai", "npc", "agent", "learning", "neuroscience", "concept-cells", "homeostasis"]
+}

@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "Si usas Neutro en un trabajo, cítalo así. / If you use Neutro in your work, please cite it as below."
+title: "Neutro: un cerebro de neuronas de concepto para agentes que aprenden de lo que sienten"
+authors:
+  - family-names: "Martinez"
+    given-names: "Emilio"
+    affiliation: "FOKO SOFT"
+version: "0.1.0"
+date-released: "2026-10-05"
+license: Apache-2.0
+repository-code: "https://github.com/emicaim/PUBLIC-NEUTRO"
+keywords:
+  - artificial intelligence
+  - concept cells
+  - homeostatic reinforcement learning
+  - game AI
+  - agents

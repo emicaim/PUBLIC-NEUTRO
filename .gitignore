@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+node_modules/
+csharp/**/bin/
+csharp/**/obj/
+csharp/**/bin~/
+csharp/**/obj~/
+*.txt

@@ -1,0 +1,13 @@
+{
+  "name": "neutro-cerebro",
+  "version": "0.1.0",
+  "description": "Neutro: un cerebro de neuronas de concepto para agentes y NPC que aprenden solos de lo que sienten. Sin dependencias; idéntico a las versiones de Python y C#.",
+  "type": "module",
+  "main": "index.js",
+  "exports": { ".": "./index.js" },
+  "files": ["index.js", "src/"],
+  "license": "Apache-2.0",
+  "author": "FOKO SOFT (Emilio Martinez)",
+  "repository": { "type": "git", "url": "git+https://github.com/emicaim/PUBLIC-NEUTRO.git", "directory": "js" },
+  "keywords": ["ai", "npc", "agent", "learning", "neuroscience", "concept-cells", "homeostasis", "games"]
+}

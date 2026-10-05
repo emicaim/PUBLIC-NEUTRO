@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- El núcleo de Neutro en C# puro: sin Unity ni nada más, para usarlo en Unity, Godot o donde sea.
+       .NET Standard 2.1 es lo que admite Unity. -->
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <LangVersion>9.0</LangVersion>
+    <Nullable>disable</Nullable>
+    <RootNamespace>Neutro</RootNamespace>
+  </PropertyGroup>
+</Project>
