@@ -1,3 +1,5 @@
+<p align="center"><img src="assets/logo.png" alt="Neutro" width="360"></p>
+
 # Neutro
 
 **A brain for agents and game characters that learn on their own from what they feel.**

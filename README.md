@@ -1,3 +1,5 @@
+<p align="center"><img src="assets/logo.png" alt="Neutro" width="360"></p>
+
 # Neutro
 
 **Un cerebro para agentes y personajes que aprenden solos de lo que sienten.**
