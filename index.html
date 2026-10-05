@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Neutro · FOKO SOFT</title>
+<meta name="description" content="Neutro: un cerebro de neuronas de concepto para agentes y personajes que aprenden solos de lo que sienten. Libre (Apache 2.0).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --fondo: #f6f2ea; --tinta: #1f1d1a; --suave: #5b564e; --linea: #ddd5c7; --tarjeta: #fffdf8;
+    --acento: #2f6b4f; --acento-tinta: #ffffff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --fondo: #15140f; --tinta: #efe9dd; --suave: #a9a194; --linea: #34312a; --tarjeta: #1d1b16;
+            --acento: #6fbf93; --acento-tinta: #10140f; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--fondo); color: var(--tinta);
+         font: 17px/1.6 "Instrument Sans", system-ui, sans-serif; }
+  main { max-width: 860px; margin: 0 auto; padding: 56px 16px 72px; }
+  h1, h2 { font-family: "Bricolage Grotesque", system-ui, sans-serif; line-height: 1.1; margin: 0; }
+  h1 { font-size: clamp(42px, 8vw, 72px); font-weight: 800; letter-spacing: -0.02em; }
+  h2 { font-size: 22px; font-weight: 600; margin-bottom: 8px; }
+  .lema { font-size: clamp(19px, 3vw, 23px); color: var(--suave); margin: 14px 0 32px; max-width: 640px; }
+  .botones { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 48px; }
+  .boton { display: inline-block; padding: 13px 22px; border-radius: 10px; text-decoration: none; font-weight: 600;
+           border: 1px solid var(--linea); color: var(--tinta); background: var(--tarjeta); }
+  .boton.principal { background: var(--acento); color: var(--acento-tinta); border-color: var(--acento); }
+  .boton:hover { filter: brightness(1.06); }
+  .rejilla { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-bottom: 40px; }
+  .tarjeta { background: var(--tarjeta); border: 1px solid var(--linea); border-radius: 14px; padding: 20px; }
+  .tarjeta p { margin: 0; color: var(--suave); font-size: 15.5px; }
+  pre { background: var(--tarjeta); border: 1px solid var(--linea); border-radius: 12px; padding: 16px;
+        overflow-x: auto; font-size: 14px; }
+  footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--linea); color: var(--suave); font-size: 14.5px; }
+  a { color: var(--acento); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Neutro</h1>
+  <p class="lema">Un cerebro para agentes y personajes que <b>aprenden solos de lo que sienten</b>: qué alivia el hambre,
+    qué hace daño, de qué conviene huir. Sin entrenamiento previo, y se puede leer lo que piensa.</p>
+
+  <div class="botones">
+    <a class="boton principal" href="demo/minds/">Probar Neutro Minds</a>
+    <a class="boton" href="https://github.com/emicaim/PUBLIC-NEUTRO">Código en GitHub</a>
+    <a class="boton" href="https://github.com/emicaim/PUBLIC-NEUTRO/blob/main/docs/INTEGRAR.md">Integrarlo en tu juego</a>
+  </div>
+
+  <div class="rejilla">
+    <div class="tarjeta"><h2>Neuronas de concepto</h2>
+      <p>Inspirado en Rodrigo Quian Quiroga: cada concepto («lobo cerca», «hambre») aprende qué hacer, y lo aprendido pasa a
+        las situaciones parecidas.</p></div>
+    <div class="tarjeta"><h2>Aprende del cuerpo</h2>
+      <p>Lo bueno y lo malo lo decide su cuerpo: si algo alivia una necesidad, estuvo bien; si la empeora, mal.</p></div>
+    <div class="tarjeta"><h2>Diminuto y legible</h2>
+      <p>Sin dependencias y unos pocos KB por agente. El mismo cerebro en C# (Unity), JavaScript y Python.</p></div>
+  </div>
+
+  <h2>Neutro Minds</h2>
+  <p>Un mundo con miles de mentes, cada una con su propio cerebro de Neutro. Forman pueblos, construyen casas, inventan
+    palabras y herramientas, comercian y se pelean; nadie les dice cómo. Puedes hacer de dios: rayos, plagas, volcanes,
+    sequías… y ver cómo lo viven. Haz clic en cualquiera para leer qué piensa y de quién aprendió cada idea.</p>
+  <p><a class="boton principal" href="demo/minds/">Entrar en el mundo</a></p>
+
+  <h2 style="margin-top:40px">Pruébalo en un minuto</h2>
+<pre>git clone https://github.com/emicaim/PUBLIC-NEUTRO.git
+cd PUBLIC-NEUTRO
+node ejemplos/minimo.mjs     # una criatura aprende sola a comer y a huir del lobo</pre>
+
+  <p>Lo que sabe hacer y lo que no, medido con honestidad:
+    <a href="https://github.com/emicaim/PUBLIC-NEUTRO/blob/main/docs/RESULTADOS.md">resultados</a>.</p>
+
+  <footer>
+    Libre bajo licencia Apache 2.0 · © 2026 <b>FOKO SOFT</b> (Emilio Martinez).
+    Si lo usas, conserva el aviso NOTICE y menciónanos en los créditos. <br>
+    <i>A brain for agents that learn on their own from what they feel — free and open source.</i>
+  </footer>
+</main>
+</body>
+</html>

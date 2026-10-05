@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Neutro Minds</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<header class="barra-superior">
+  <span class="marca">Neutro Minds</span>
+  <span class="sep"></span>
+  <span class="anio" id="anio">Año 0</span>
+  <div class="cifras">
+    <span class="cifra" title="Personas vivas: cada una con su propio cerebro de Neutro"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="7" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg><b id="c-vivos">0</b><span class="palabra-cifra"> mentes</span></span>
+    <span class="cifra" title="Pueblos vivos (también los que nacen de aldeas que se separan)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V10l7-6 7 6v11"/></svg><b id="c-pueblos">0</b><span class="palabra-cifra"> pueblos</span></span>
+    <span class="cifra guerra" id="c-guerras-caja" title="Guerras en curso" hidden><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 19L19 5M15 5h4v4M9 19H5v-4"/></svg><b id="c-guerras">0</b><span class="palabra-cifra"> guerras</span></span>
+    <span class="cifra" title="Inventos descubiertos en el mundo (nadie los programa: los encuentra alguien probando)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.8.8 1 1.5 1 2.5h6c0-1 .2-1.7 1-2.5A6 6 0 0 0 12 3z"/></svg><b id="c-inventos">0</b><span class="palabra-cifra"> inventos</span></span>
+  </div>
+  <nav class="informes" aria-label="Informes">
+    <button data-informe="pueblos">Pueblos</button>
+    <button data-informe="cronica">Historia</button>
+    <button data-informe="inventos">Inventos</button>
+    <button data-informe="lab">Sociedad</button>
+    <button data-informe="lenguas">Lenguas</button>
+    <button data-informe="enciclopedia" class="redondo" aria-label="Enciclopedia: cómo funciona todo" title="Enciclopedia: cómo funciona todo">?</button>
+  </nav>
+</header>
+<main>
+  <nav class="lentes" id="lentes" aria-label="Lentes del mapa"></nav>
+  <section class="centro">
+    <!-- EL MAPA, sin nada encima (solo los informes, que se abren y se cierran) -->
+    <div class="mapa">
+      <canvas id="lienzo"></canvas>
+      <div class="bienvenida" id="bienvenida" hidden>
+        <div class="ventana-bienvenida" role="dialog" aria-labelledby="bienvenida-titulo">
+          <h1 id="bienvenida-titulo">Neutro Minds</h1>
+          <p class="entradilla">Un mundo donde <b>cada habitante tiene su propio cerebro</b> y aprende de lo que vive. Nadie les dice qué hacer: inventan, hablan, comercian, se pelean, entierran a sus muertos… o no.</p>
+          <div class="pasos">
+            <div><b>Pincha en alguien</b> para leer su mente: qué ve, qué piensa y de quién aprendió cada idea.</div>
+            <div><b>Las lentes</b> de la izquierda cambian lo que ves: lenguas, gobiernos, comercio, clima…</div>
+            <div><b>Tú eres el dios</b> (teclas 1 a 5): rayo, plaga, comida, lobos o algo que cae del cielo. Lo que hagas, lo viven y lo aprenden.</div>
+            <div><b>La velocidad</b>, abajo: 1× es el ritmo de una persona; 256× deja ver pasar generaciones.</div>
+          </div>
+          <p class="experimento">También es un <b>experimento</b>: cada mundo sale de una semilla y se puede repetir igual. En «Mundo» ves sus condiciones, copias el enlace exacto y exportas los datos. Cómo funciona cada cosa, en el «?».</p>
+          <div class="botones-bienvenida"><button id="empezar" class="boton primario">Empezar</button><button id="bienvenida-enciclopedia" class="boton">Cómo funciona</button></div>
+          <p class="experimento" style="margin-top:14px">Hecho con <a href="../../" style="color:inherit"><b>Neutro</b></a>, un cerebro libre (Apache 2.0) de <b>FOKO SOFT</b> (Emilio Martinez) · <a href="https://github.com/emicaim/PUBLIC-NEUTRO" style="color:inherit">código en GitHub</a></p>
+        </div>
+      </div>
+      <div class="informe" id="informe" hidden>
+      <div class="ventana" role="dialog" aria-labelledby="informe-titulo">
+        <div class="cab-informe"><h2 id="informe-titulo">Informe</h2><button id="informe-cerrar" aria-label="Cerrar el informe">×</button></div>
+        <div class="cuerpo-informe">
+          <div id="pueblos" class="panel"></div>
+          <div id="cronica" class="panel"></div>
+          <div id="lab" class="panel"></div>
+          <div id="lenguas" class="panel"></div>
+          <div id="inventos" class="panel"></div>
+          <div id="enciclopedia" class="panel"></div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <!-- LA FRANJA de abajo: leyendas a la izquierda, controles en el centro, minimapa a la derecha -->
+    <div class="franja">
+      <div class="franja-izq"><div class="caja leyenda-lente" id="leyenda-lente"></div></div>
+      <div class="franja-centro"><div class="caja siguiendo" id="siguiendo" hidden>
+      <span class="faro"></span><span id="siguiendo-texto"></span><span class="datos-idea" id="siguiendo-datos"></span>
+      <button id="siguiendo-cerrar" title="Dejar de seguir">✕</button>
+    </div><div class="caja ayuda-poder" id="ayuda-poder" hidden></div><div class="barra-control">
+      <button id="pausa" class="boton cuadrado" title="Pausa (espacio)">▮▮</button>
+      <div class="velocidades" id="velocidades"></div>
+      <span class="sep"></span>
+      <div class="poderes" id="poderes"></div>
+      <details class="menu-mundo menu-poderes" id="mas-poderes">
+        <summary class="boton cuadrado" title="Más poderes: volcán, terremoto, lluvia, sequía, langostas y plantas nuevas">+</summary>
+        <div class="menu caja"><div class="rotulo">La tierra y el cielo</div><div class="lista-mas-poderes" id="lista-mas-poderes"></div>
+          <p class="tenue" style="margin:4px 0 0">Cada poder toca la física del mundo: las mentes lo viven y aprenden de ello como de todo.</p></div>
+      </details>
+      <span class="sep"></span>
+      <details class="menu-mundo" id="menu-mundo">
+        <summary class="boton" title="Opciones, otro mundo y la ficha del experimento">Mundo ▾</summary>
+        <div class="menu caja">
+          <div class="rotulo">Este mundo (el experimento)</div>
+          <div class="ficha-exp" id="ficha-exp"></div>
+          <div class="fila-menu"><button id="copiar-enlace" class="boton">Copiar enlace</button><button id="exportar-json" class="boton">Datos (JSON)</button><button id="exportar-csv" class="boton">Población (CSV)</button></div>
+          <div class="rotulo" style="margin-top:6px">Ver</div>
+          <div class="fila-menu">
+            <label class="boton opcion" title="Ciclo de día y noche (solo visual)"><input type="checkbox" id="ver-noche" checked> noche</label>
+            <label class="boton opcion" title="Niebla sobre lo que nadie ha visto aún"><input type="checkbox" id="ver-niebla" checked> niebla</label>
+            <label class="boton opcion" title="Las nubes y su sombra (salen de la física: donde el aire se satura)"><input type="checkbox" id="ver-nubes" checked> nubes</label>
+          </div>
+          <div class="rotulo" style="margin-top:6px">Crear otro mundo</div>
+          <div class="fila-menu">
+            <select id="tipo-mundo" class="boton" aria-label="Tipo de mundo" title="Qué mundo se crea con «Otro mundo»">
+              <option value="continente">Continente</option><option value="islas">Cuatro islas</option><option value="archipielago">Archipiélago</option>
+            </select>
+            <label class="boton opcion" title="Heredar y enseñar ideas (apágalo para comparar)"><input type="checkbox" id="cultura" checked> con cultura</label>
+            <button id="nuevo" class="boton">Otro mundo</button>
+          </div>
+        </div>
+      </details>
+    </div></div>
+      <div class="franja-der"><button id="encuadre" class="boton" title="Ver el mundo entero (rueda: zoom · arrastrar: mover · doble clic: acercar)"><span id="zoom">zoom 1×</span></button><div class="caja contenedor-minimapa"><canvas id="minimapa" width="160" height="100" title="Pincha para ir allí"></canvas></div></div>
+    </div>
+  </section>
+
+  <aside>
+    <nav class="nav-panel" aria-label="Navegación del panel">
+      <button id="atras" class="boton" title="Volver a lo anterior (retroceso · Alt+← · botón atrás del ratón)" disabled>← Atrás</button>
+      <div class="migas" id="migas"></div>
+    </nav>
+    <div class="arriba-panel"><div class="caja guerra" id="guerra" hidden></div><div class="avisos" id="avisos" aria-live="polite"></div></div>
+    <div id="inicio" class="panel activo"></div>
+    <div id="pueblo" class="panel"></div>
+    <div id="idea" class="panel"><p class="vacio">Abre la mente de alguien y pincha en una de sus ideas para seguirla: verás quién más la lleva, de quién la aprendió cada uno y cómo ha viajado por el mapa.</p></div>
+    <div id="mente" class="panel"><p class="vacio">Haz clic en una persona del mapa para leer su mente: qué ve, qué piensa ahora y de quién aprendió cada idea.</p></div>
+  </aside>
+</main>
+<script type="module" src="vista.js"></script>
+</body>
+</html>
