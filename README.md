@@ -14,6 +14,14 @@ parecidas.
 
 [English version](README.en.md)
 
+## Neutro en acción
+
+- **[HER](https://foko-games.itch.io/her)** (itch.io, gratis en el navegador): un juego de plataformas en el que, en el modo
+  CANON, **juega Neutro** y ves su cerebro en vivo —qué ve, qué quiere, qué hace y de dónde sale cada decisión—. Se
+  equivoca, muere y aprende mientras lo miras.
+- **[Neutro Minds](https://emicaim.github.io/PUBLIC-NEUTRO/demo/minds/)**: un mundo con miles de mentes, cada una con su
+  propio cerebro de Neutro, que forman pueblos, inventan, comercian y se pelean sin que nadie les diga cómo.
+
 ## Qué lo hace distinto
 
 - **Aprende en vivo**, sin entrenamiento previo: de cada alivio y de cada malestar del cuerpo (recompensa homeostática,

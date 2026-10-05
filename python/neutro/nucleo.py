@@ -594,7 +594,7 @@ class Nucleo:
 
 
 # ==== MEMORIA DE SUCESOS Y DE RUTAS (EXPERIMENTAL) ===================================================================
-# Nacieron en HER (el juego de plataformas en Unity que el robot terminó entero; ver ROBOT-NEUTRO.md en ese proyecto) y
+# Nacieron en HER (https://foko-games.itch.io/her, el juego de plataformas donde Neutro juega en directo y que llegó a terminar entero) y
 # aquí no saben a qué juego se juega. EXPERIMENTAL: solo en Python y fuera de docs/COMO-FUNCIONA.md hasta que demuestren una mejora
 # medida en un juego de la NES (ver NOCHE.md). No tocan las decisiones del Nucleo: quien juega decide cómo usarlas.
 

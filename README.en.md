@@ -13,6 +13,14 @@ It is inspired by the **concept cells** discovered by Rodrigo Quian Quiroga: neu
 
 > The code and the documentation are written in Spanish; the API is small and the examples are easy to follow.
 
+## Neutro in action
+
+- **[HER](https://foko-games.itch.io/her)** (itch.io, free in the browser): a platformer where, in CANON mode, **Neutro
+  plays** and you watch its brain live —what it sees, what it wants, what it does and where each decision comes from.
+  It makes mistakes, dies and learns while you watch.
+- **[Neutro Minds](https://emicaim.github.io/PUBLIC-NEUTRO/demo/minds/)**: a world of thousands of minds, each with its
+  own Neutro brain, forming villages, inventing, trading and fighting with nobody telling them how.
+
 ## Why it is different
 
 - **Learns online**, with no prior training: from every relief and every discomfort of its body (homeostatic

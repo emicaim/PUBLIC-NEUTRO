@@ -710,7 +710,7 @@ export class Mundo {
       madera: 0, piedra: 0, pieles: 0, fibra: 0, hueso: 0, arcilla: 0, resina: 0, obsidiana: 0, hierro: 0, conchas: 0, oro: 0,
       cosas: [], recetas: new Map(), valor: new Map(), excedentes: [], hechas: 0,
       objetos: new Set(),      // (lo que no se inventa combinando: la carreta)
-      // MEMORIA DE SUCESOS (Asociaciones, de HER): sequía, lluvias, pasar hambre, ser herido... qué va con qué
+      // MEMORIA DE SUCESOS (Asociaciones, nacida en HER, https://foko-games.itch.io/her): sequía, lluvias, pasar hambre, ser herido... qué va con qué
       asoc: new Asociaciones(2 * TICKS_POR_ANIO, 24, 2 * TICKS_POR_DIA), hambriento: false, sediento: false,
       nucleo: this.nuevaMente(),
       origen: new Map(),   // situación → {autor, nombre, tribu, anio, manos}: la genealogía de cada idea suya
